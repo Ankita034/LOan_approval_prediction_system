@@ -1,0 +1,106 @@
+{% extends 'main.html' %}
+
+{% block title %}
+{% load static %}
+<title>signup/Zero</title>
+<link href="{% static 'details.css' %}" rel='stylesheet' class='css'>
+{% endblock title %}
+
+{% block body %}
+<div class='form'>
+<form method='POST' action='result'>
+    {% csrf_token %}
+    
+    <legend>Fund Finder</legend>
+
+    <br>
+
+    <label for='id'>Enter the loan_ID</label>
+    <input type='number' id='id' name='id'>
+
+    <br>
+
+    <label for='gender'>Gender : </label>
+    <select id='gender' name='gender'>
+        <option value='Male'>Male</option>
+        <option value='Female'>Female</option>
+        <option value='Other'>Other</option>
+    </select>
+
+    <br>
+
+    <label for='mstatus'>Marital status</label>
+    <select id='mstatus' name='mstatus'>
+        <option value='Yes'>Married</option>
+        <option value='No'>Unmarried</option>
+    </select>
+
+    <br>
+
+    <label for='dependents'>dependents</label>
+    <input type='number' id='dependents' name='dependents'>
+
+    <br>
+
+    <label for='education'>Education</label>
+    <select id='education' name='education'>
+        <option value='Graduate'>Graduate</option>
+        <option value='Not Graduate'>Not Graduate</option>
+    </select>
+
+    <br>
+
+    <label for='profession'>Self Employed</label>
+    <select id='profession' name='profession'>
+        <option value='Yes'>Self-Employed</option>
+        <option value='No'>Salaried</option>
+    </select>
+
+    <br>
+
+    <label for='income'>Enter the Income of the applicant : </label>
+    <input type='number' id='income' name='income'>
+
+    <br>
+
+    <label for='cincome'>Enter the Income of Co-applicant : </label>
+    <input type='number' id='cincome' name='cincome'>
+
+    <br>
+
+    <label for='amount'>Enter the loan amount : </label>
+    <input type='number' id='amount' name='amount'>
+
+    <br>
+
+    <label for='term'>Enter the loan term in months : </label>
+    <input type='number' id='term' name='term'>
+
+    <br>
+
+    <label for='chistory'>Credit History</label>
+    <input type='number' id='chistory' name='chistory' maximum=1>
+
+    <br>
+
+    <label for='parea'>Property Area</label>
+    <select id='parea' name='parea'>
+        <option value='Urban'>Urban</option>
+        <option value='Rural'>Rural</option>
+    </select>
+    
+    <br>
+
+    <label for='loan_status'>Loan Status</label>
+    <input type='radio' name='loan' value='N'>Not Approved</input>
+    <input type='radio' name='loan' value='Y'>Approved</input>
+    
+    <input type='submit' value='Check now' class='button'>
+</form>
+<br>
+
+{% if error %}
+<h3> {{ error }} </h3>
+{% endif %}
+</div>
+{% endblock body %}

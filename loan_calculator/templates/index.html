@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block top %}
+{% load static %}
+<title>index/Zero</title>
+<link href="{% static 'index.css' %}" rel='stylesheet' class='css'>
+{% endblock top %}
+
+{% block upper %}
+<img src="{% static 'images/library logo.jpg' %}">
+<h1 class='head1'>Fund Finder</h1>
+<h2>Aapke har kadam ka saathi</h2>
+<h2>Providing loans to the millions of people. So, that you never hesitate to fulfill your dream</h2>
+<h2>Here you can check for loan eligibility</h2>
+<br></br>
+<a href="{% url 'calculator' %}">Check eligibility</a>
+{% endblock upper %}
