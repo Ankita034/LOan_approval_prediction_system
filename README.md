@@ -1,1 +1,1 @@
-# LOan_approval_prediction_system
+# Loan_approval_prediction_system
